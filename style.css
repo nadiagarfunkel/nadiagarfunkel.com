@@ -470,6 +470,7 @@ ul { list-style: none; }
 
 .speaking-img {
   aspect-ratio: 1 / 1;
+  overflow: hidden;
   background:
     linear-gradient(135deg, rgba(26, 92, 58, 0.12), rgba(45, 138, 87, 0.22)),
     var(--purple-pale);
