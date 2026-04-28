@@ -19,7 +19,7 @@
   --font-head: 'Blinker', sans-serif;
   --font-body: 'Manrope', sans-serif;
   --font-mono: 'Chivo Mono', monospace;
-  --font-script: 'Pinyon Script', cursive;
+  --font-script: 'Space Mono', monospace;
 }
 
 html { scroll-padding-top: 70px; scroll-behavior: smooth; }
@@ -110,7 +110,7 @@ ul { list-style: none; }
 .hero-eyebrow {
   font-family: var(--font-script);
   font-size: clamp(2.8rem, 7vw, 5.5rem);
-  font-weight: 400;
+  font-weight: 700;
   color: var(--black);
   letter-spacing: -0.01em;
   margin-bottom: 1rem;
@@ -303,7 +303,7 @@ ul { list-style: none; }
   font-size: 1.35rem;
   font-style: normal;
   color: var(--purple);
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.04em;
 }
 .marquee-track span { flex-shrink: 0; }
@@ -555,6 +555,32 @@ ul { list-style: none; }
   letter-spacing: -0.01em;
 }
 .contact-text p { color: var(--text-mid); font-size: 0.95rem; margin-bottom: 0.5rem; }
+
+.linkedin-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.1rem;
+  background: var(--purple-pale);
+  border: 1px solid rgba(26, 92, 58, 0.2);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--purple);
+  text-transform: uppercase;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.linkedin-cta:hover {
+  background: var(--purple);
+  border-color: var(--purple);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+.linkedin-icon { display: inline-flex; align-items: center; }
+.linkedin-arrow { transition: transform 0.2s; }
+.linkedin-cta:hover .linkedin-arrow { transform: translateX(3px); }
 
 .contact-form { display: flex; flex-direction: column; gap: 1rem; }
 .contact-form input,
