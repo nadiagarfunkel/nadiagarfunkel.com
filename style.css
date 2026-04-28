@@ -618,6 +618,9 @@ ul { list-style: none; }
     border-left: 1px solid var(--border);
   }
   .nav-links.open { right: 0; }
+  body {
+    background: #b8e0e0 url('images/glass.png') top left / 480px auto repeat scroll;
+  }
   .section { padding: 3rem 1.25rem; }
   .about-grid { grid-template-columns: 1fr; }
   .about-portrait { grid-row: auto; max-height: 380px; overflow: hidden; }
