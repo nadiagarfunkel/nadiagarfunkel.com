@@ -446,6 +446,11 @@ ul { list-style: none; }
   padding-top: 1.25rem;
   border-top: 1px solid var(--border);
 }
+.subsection-title-first {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
 
 /* ===== Speaking grid ===== */
 .speaking-grid {
