@@ -19,7 +19,7 @@
   --font-head: 'Blinker', sans-serif;
   --font-body: 'Manrope', sans-serif;
   --font-mono: 'Chivo Mono', monospace;
-  --font-script: 'Space Mono', monospace;
+  --font-script: 'Dr Sugiyama', cursive;
 }
 
 html { scroll-padding-top: 70px; scroll-behavior: smooth; }
@@ -110,7 +110,7 @@ ul { list-style: none; }
 .hero-eyebrow {
   font-family: var(--font-script);
   font-size: clamp(2.8rem, 7vw, 5.5rem);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--black);
   letter-spacing: -0.01em;
   margin-bottom: 1rem;
@@ -303,7 +303,7 @@ ul { list-style: none; }
   font-size: 1.35rem;
   font-style: normal;
   color: var(--purple);
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.04em;
 }
 .marquee-track span { flex-shrink: 0; }
