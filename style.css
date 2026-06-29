@@ -409,6 +409,10 @@ ul { list-style: none; }
   border-bottom: none;
 }
 
+.quotes-list blockquote:last-child {
+  border-bottom: none;
+}
+
 .mentor-callout {
   padding: 2rem 2.5rem;
   margin-bottom: 3rem;
@@ -434,6 +438,16 @@ ul { list-style: none; }
 .mentor-callout a { color: var(--purple-light); font-style: normal; font-weight: 600; }
 
 .small-note { font-size: 0.82rem; color: var(--text-light); font-style: normal; }
+
+.ratings-note {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--purple);
+  letter-spacing: 0.04em;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
 
 .subsection-title {
   font-family: var(--font-mono);
