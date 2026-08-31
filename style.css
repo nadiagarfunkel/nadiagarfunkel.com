@@ -4,6 +4,15 @@
 /* Ranade Medium — self-hosted (Indian Type Foundry), replaces the old script face */
 @font-face {
   font-family: 'Ranade';
+  src: url('fonts/Ranade-Light.woff2') format('woff2'),
+       url('fonts/Ranade-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ranade';
   src: url('fonts/Ranade-Medium.woff2') format('woff2'),
        url('fonts/Ranade-Medium.woff') format('woff');
   font-weight: 500;
@@ -144,9 +153,9 @@ ul { list-style: none; }
 }
 
 .carousel-word {
-  font-family: var(--font-head);
+  font-family: var(--font-script);
   font-size: clamp(1.1rem, 2.4vw, 1.8rem);
-  font-weight: 400;
+  font-weight: 300;
   color: var(--text);
   padding: 0 0.4rem;
   flex-shrink: 0;
@@ -338,9 +347,9 @@ ul { list-style: none; }
 }
 
 .service-col h3 {
-  font-family: var(--font-head);
+  font-family: var(--font-script);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text);
   margin-bottom: 1.25rem;
   line-height: 1.3;
