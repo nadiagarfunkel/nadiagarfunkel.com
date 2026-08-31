@@ -1,6 +1,16 @@
 /* ===== Reset ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Ranade Medium — self-hosted (Indian Type Foundry), replaces the old script face */
+@font-face {
+  font-family: 'Ranade';
+  src: url('fonts/Ranade-Medium.woff2') format('woff2'),
+       url('fonts/Ranade-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --black: #0d1a12;
   --dark: #1a2e20;
@@ -19,7 +29,7 @@
   --font-head: 'Blinker', sans-serif;
   --font-body: 'Manrope', sans-serif;
   --font-mono: 'Chivo Mono', monospace;
-  --font-script: 'Dr Sugiyama', cursive;
+  --font-script: 'Ranade', 'Helvetica Neue', Arial, sans-serif;
 }
 
 html { scroll-padding-top: 70px; scroll-behavior: smooth; }
@@ -109,10 +119,10 @@ ul { list-style: none; }
 
 .hero-eyebrow {
   font-family: var(--font-script);
-  font-size: clamp(2.8rem, 7vw, 5.5rem);
-  font-weight: 400;
+  font-size: clamp(2rem, 4.8vw, 3.75rem);
+  font-weight: 500;
   color: var(--black);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
   margin-bottom: 1rem;
   white-space: nowrap;
   line-height: 1;
@@ -300,11 +310,11 @@ ul { list-style: none; }
   white-space: nowrap;
   animation: scroll-left 20s linear infinite;
   font-family: var(--font-script);
-  font-size: 1.35rem;
+  font-size: 1.05rem;
   font-style: normal;
   color: var(--purple);
-  font-weight: 400;
-  letter-spacing: 0.04em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 .marquee-track span { flex-shrink: 0; }
 .marquee-sep { font-size: 0.5rem; align-self: center; opacity: 0.7; }
