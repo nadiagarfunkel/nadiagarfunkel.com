@@ -139,12 +139,10 @@ ul { list-style: none; }
 
 .hero-roles {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  gap: 1rem;
+  gap: clamp(1rem, 2.5vw, 2.5rem);
 }
 
 .hero-role {
@@ -156,6 +154,8 @@ ul { list-style: none; }
   text-transform: uppercase;
   white-space: nowrap;
 }
+/* Cancel trailing letter-spacing so the row is optically centered */
+.hero-role:last-child { margin-right: -0.18em; }
 
 .hero-sep {
   font-size: 0.55rem;
