@@ -142,7 +142,7 @@ ul { list-style: none; }
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: clamp(1rem, 2.5vw, 2.5rem);
+  gap: clamp(0.75rem, 1.6vw, 1.6rem);
 }
 
 .hero-role {
@@ -158,7 +158,7 @@ ul { list-style: none; }
 .hero-role:last-child { margin-right: -0.18em; }
 
 .hero-sep {
-  font-size: 0.55rem;
+  font-size: 0.75rem;
   color: var(--white);
   opacity: 0.9;
 }
@@ -174,7 +174,7 @@ ul { list-style: none; }
 
 @keyframes bob {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
+  50% { transform: translateY(8px); }
 }
 
 /* ===== Sections ===== */
