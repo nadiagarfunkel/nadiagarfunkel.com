@@ -304,34 +304,10 @@ ul { list-style: none; }
   line-height: 1.6;
 }
 
-/* ===== Marquee ===== */
-.marquee-divider {
-  overflow: hidden;
-  padding: 1.1rem 0;
-  background: rgba(255, 255, 255, 0.55);
-  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-}
-
-.marquee-track {
-  display: flex;
-  gap: 2rem;
-  white-space: nowrap;
-  animation: scroll-left 20s linear infinite;
-  font-family: var(--font-script);
-  font-size: 1.05rem;
-  font-style: normal;
-  color: var(--purple);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-.marquee-track span { flex-shrink: 0; }
-.marquee-sep { font-size: 0.5rem; align-self: center; opacity: 0.7; }
-
 /* ===== Services ===== */
 .services-columns {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
