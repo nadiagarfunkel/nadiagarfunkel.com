@@ -139,6 +139,7 @@ h1, h2, h3, h4 { font-weight: 300; }
 /* After the hero, body text is bold for legibility on the photo; headings stay light */
 .screen { font-weight: 500; }
 .screen h2, .screen h3 { font-weight: 300; }
+.contact h2 { font-weight: 500; }
 
 /* Text column that starts at the middle of the page */
 .col-2 { margin-left: 50%; }
@@ -168,8 +169,10 @@ h1, h2, h3, h4 { font-weight: 300; }
 .about-text, .about-details { max-width: 36rem; }
 
 .about-text p {
-  font-size: var(--size-l);
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
   margin-bottom: 0.85rem;
+  /* Avoid single-word last lines */
+  text-wrap: pretty;
 }
 
 .about-details { margin-top: 1rem; }
