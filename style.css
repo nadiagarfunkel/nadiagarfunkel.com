@@ -1,30 +1,11 @@
 /* ===== Reset ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* GT Zirkon (Grilli Type) — self-hosted; drop licensed webfont files into fonts/ */
+/* Absans — self-hosted. Only Regular is included, so heavier weights are synthesized by the browser */
 @font-face {
-  font-family: 'GT Zirkon';
-  src: url('fonts/GT-Zirkon-Light.woff2') format('woff2'),
-       url('fonts/GT-Zirkon-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GT Zirkon';
-  src: url('fonts/GT-Zirkon-Regular.woff2') format('woff2'),
-       url('fonts/GT-Zirkon-Regular.woff') format('woff');
+  font-family: 'Absans';
+  src: url('fonts/Absans-Regular.woff') format('woff');
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GT Zirkon';
-  src: url('fonts/GT-Zirkon-Medium.woff2') format('woff2'),
-       url('fonts/GT-Zirkon-Medium.woff') format('woff');
-  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -36,7 +17,7 @@
   --rule: rgba(255, 255, 255, 0.28);
   --base: #0b1110;
 
-  --font-head: 'GT Zirkon', 'Helvetica Neue', Arial, sans-serif;
+  --font-head: 'Absans', 'Helvetica Neue', Arial, sans-serif;
 
   /* Type scale: xl matches the hero */
   --size-xl: clamp(1.4rem, 3vw, 2.6rem);
@@ -45,6 +26,10 @@
   --size-s: 0.8rem;
 
   --gutter: clamp(1.25rem, 5vw, 5rem);
+  /* Right-hand text boxes start a little past the middle of the page */
+  --shift: 2rem;
+  --box: rgba(0, 0, 0, 0.65);
+  --box-pad: 2rem 2.25rem;
   --shadow: 0 1px 14px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -137,12 +122,13 @@ h1, h2, h3, h4 { font-weight: 300; }
 }
 
 /* After the hero, body text is bold for legibility on the photo; headings stay light */
-.screen { font-weight: 500; }
+.screen { font-weight: 600; }
 .screen h2, .screen h3 { font-weight: 300; }
-.contact h2 { font-weight: 500; }
+.contact h2 { font-weight: 600; }
 
-/* Text column that starts at the middle of the page */
-.col-2 { margin-left: 50%; }
+/* Text box that starts just past the middle of the page and runs to the right edge */
+.col-2 { margin-left: calc(50% + var(--shift)); }
+.box { background: var(--box); padding: var(--box-pad); }
 
 .subsection-title {
   font-size: var(--size-s);
@@ -157,16 +143,17 @@ h1, h2, h3, h4 { font-weight: 300; }
   align-items: center;
   column-gap: 0;
 }
+.about-copy { grid-column: 2; grid-row: 1; }
 
 .about-portrait {
-  grid-row: 1 / 3;
+  grid-row: 1;
   align-self: center;
   justify-self: center;
   width: min(260px, 70%);
   /* Center on the left half of the page rather than the padded column */
   transform: translateX(calc(var(--gutter) / -2));
 }
-.about-text, .about-details { max-width: 36rem; }
+.about-copy { margin-left: var(--shift); }
 
 .about-text p {
   font-size: clamp(1rem, 1.25vw, 1.15rem);
@@ -215,7 +202,7 @@ h1, h2, h3, h4 { font-weight: 300; }
 
 /* Each speaking example and the student feedback get their own translucent box */
 .speaking-card, .feedback {
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--box);
   padding: 1rem;
 }
 .feedback { margin-top: 1.25rem; padding: 1.25rem 1.5rem; }
@@ -320,7 +307,7 @@ h1, h2, h3, h4 { font-weight: 300; }
 .footer {
   position: absolute;
   bottom: 1.5rem;
-  left: 50%;
+  left: calc(50% + var(--shift) + 2.25rem);
   font-size: var(--size-s);
   color: var(--white-dim);
 }
@@ -331,7 +318,9 @@ h1, h2, h3, h4 { font-weight: 300; }
   /* Slides can be taller than the screen on phones, so snap gently */
   html { scroll-snap-type: y proximity; }
   .screen { padding: 4rem var(--gutter) 5rem; }
-  .col-2 { margin-left: 0; }
+  .col-2, .about-copy { margin-left: 0; }
+  .about-copy { grid-column: 1; grid-row: auto; }
+  .box { padding: 1.5rem; }
   .about-grid { grid-template-columns: 1fr; row-gap: 1.5rem; }
   .about-portrait { grid-row: auto; width: min(220px, 60%); justify-self: start; }
   .speaking-grid { grid-template-columns: 1fr; }
