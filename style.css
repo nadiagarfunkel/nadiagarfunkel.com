@@ -35,7 +35,6 @@
   --panel-dark: rgba(255, 255, 255, 0.62);
   --border: rgba(15, 30, 18, 0.1);
 
-  --font-head: 'Blinker', sans-serif;
   --font-body: 'Manrope', sans-serif;
   --font-script: 'Ranade', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -222,7 +221,7 @@ ul { list-style: none; }
 
 
 .about-text h2 {
-  font-family: var(--font-head);
+  font-family: var(--font-script);
   font-size: 1.9rem;
   font-weight: 700;
   color: var(--text);
@@ -337,14 +336,14 @@ ul { list-style: none; }
 }
 
 .stat-num {
-  font-family: var(--font-head);
+  font-family: var(--font-script);
   font-size: 1.9rem;
   font-weight: 600;
   color: var(--purple);
   letter-spacing: -0.01em;
 }
 .stat-denom {
-  font-family: var(--font-head);
+  font-family: var(--font-script);
   font-size: 1rem;
   color: var(--text-light);
 }
@@ -502,7 +501,7 @@ ul { list-style: none; }
   text-transform: uppercase;
 }
 .speaking-title {
-  font-family: var(--font-head);
+  font-family: var(--font-script);
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--text);
@@ -532,7 +531,7 @@ ul { list-style: none; }
 }
 
 .contact-text h2 {
-  font-family: var(--font-head);
+  font-family: var(--font-script);
   font-size: 2.2rem;
   font-weight: 700;
   color: var(--text);
