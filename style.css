@@ -133,26 +133,32 @@ h1, h2, h3, h4 { font-weight: 300; }
 /* ===== Sections: content sits straight on the photo, right-aligned ===== */
 .section {
   width: 100%;
-  text-align: right;
+  text-align: left;
 }
+
+/* After the hero, body text is bold for legibility on the photo; headings stay light */
+.screen { font-weight: 500; }
+.screen h2, .screen h3, .about-text p:first-child { font-weight: 300; }
+
+/* Text column that starts at the middle of the page */
+.col-2 { margin-left: 50%; }
 
 .subsection-title {
   font-size: var(--size-s);
   color: var(--white-dim);
-  text-transform: lowercase;
   margin: 2rem 0 0.75rem;
 }
 
 /* ===== About ===== */
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(160px, 260px) minmax(0, 36rem);
-  justify-content: space-between;
-  align-items: end;
-  gap: 1.5rem 3rem;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  column-gap: 0;
 }
 
-.about-portrait { grid-row: 1 / 3; align-self: end; }
+.about-portrait { grid-row: 1 / 3; align-self: center; justify-self: center; width: min(260px, 70%); }
+.about-text, .about-details { max-width: 36rem; }
 
 .about-text p {
   font-size: var(--size-m);
@@ -161,20 +167,18 @@ h1, h2, h3, h4 { font-weight: 300; }
 .about-text p:first-child {
   font-size: var(--size-xl);
   line-height: 1.25;
-  text-transform: lowercase;
   margin-bottom: 1.5rem;
 }
 
 .about-details { margin-top: 1rem; }
 
 .detail-row {
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  grid-template-columns: 7rem 1fr;
   gap: 1.5rem;
   padding: 0.6rem 0;
   border-top: 1px solid var(--rule);
   font-size: var(--size-s);
-  text-transform: lowercase;
 }
 .detail-label { color: var(--white-dim); }
 .detail-value em { font-style: normal; }
@@ -182,32 +186,36 @@ h1, h2, h3, h4 { font-weight: 300; }
 /* ===== Work ===== */
 .services-columns {
   display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 3rem 6rem;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
 .service-col h3 {
   font-size: var(--size-xl);
   line-height: 1.25;
-  text-transform: lowercase;
   margin-bottom: 1rem;
 }
 
 .service-col li {
   font-size: var(--size-l);
   line-height: 1.6;
-  text-transform: lowercase;
   color: var(--white-mid);
 }
 
 /* ===== Speaking ===== */
+.teaching {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background: #000;
+  text-align: right;
+  text-shadow: none;
+}
+
 .speaking-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-  max-width: 960px;
-  margin-left: auto;
 }
 
 .speaking-card { display: flex; flex-direction: column; text-decoration: none; }
@@ -221,7 +229,6 @@ h1, h2, h3, h4 { font-weight: 300; }
   display: flex;
   flex-direction: column;
   padding-top: 0.75rem;
-  text-transform: lowercase;
 }
 .speaking-venue { font-size: var(--size-s); color: var(--white-dim); }
 .speaking-title { font-size: var(--size-l); line-height: 1.3; }
@@ -237,7 +244,6 @@ h1, h2, h3, h4 { font-weight: 300; }
 .ratings-note {
   font-size: var(--size-s);
   color: var(--white-dim);
-  text-transform: lowercase;
   margin-top: 1.25rem;
 }
 
@@ -245,16 +251,15 @@ h1, h2, h3, h4 { font-weight: 300; }
 .contact-grid {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 2.5rem;
 }
 
 .contact-text h2 {
   font-size: var(--size-xl);
   line-height: 1.25;
-  text-transform: lowercase;
 }
-.contact-text p { font-size: var(--size-m); color: var(--white-mid); text-transform: lowercase; }
+.contact-text p { font-size: var(--size-m); color: var(--white-mid); }
 
 .linkedin-cta {
   display: inline-flex;
@@ -262,7 +267,6 @@ h1, h2, h3, h4 { font-weight: 300; }
   gap: 0.5rem;
   margin-top: 0.75rem;
   font-size: var(--size-m);
-  text-transform: lowercase;
 }
 .linkedin-icon { display: inline-flex; }
 
@@ -282,17 +286,17 @@ h1, h2, h3, h4 { font-weight: 300; }
   color: var(--white);
   font: inherit;
   font-size: var(--size-m);
-  text-align: right;
+  text-align: left;
   text-shadow: var(--shadow);
   resize: vertical;
 }
 .contact-form input::placeholder,
-.contact-form textarea::placeholder { color: var(--white-dim); text-transform: lowercase; }
+.contact-form textarea::placeholder { color: var(--white-dim); }
 .contact-form input:focus,
 .contact-form textarea:focus { outline: none; border-bottom-color: var(--white); }
 
 .btn-submit {
-  align-self: flex-end;
+  align-self: flex-start;
   margin-top: 1rem;
   padding: 0.55rem 1.6rem;
   background: transparent;
@@ -300,7 +304,6 @@ h1, h2, h3, h4 { font-weight: 300; }
   border: 1px solid var(--white);
   font: inherit;
   font-size: var(--size-m);
-  text-transform: lowercase;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
@@ -310,10 +313,9 @@ h1, h2, h3, h4 { font-weight: 300; }
 .footer {
   position: absolute;
   bottom: 1.5rem;
-  right: var(--gutter);
+  left: 50%;
   font-size: var(--size-s);
   color: var(--white-dim);
-  text-transform: lowercase;
 }
 .footer-sep { margin: 0 0.5rem; }
 
@@ -322,8 +324,10 @@ h1, h2, h3, h4 { font-weight: 300; }
   /* Slides can be taller than the screen on phones, so snap gently */
   html { scroll-snap-type: y proximity; }
   .screen { padding: 4rem var(--gutter) 5rem; }
-  .about-grid { grid-template-columns: 1fr; }
-  .about-portrait { grid-row: auto; width: min(220px, 60%); justify-self: end; }
-  .services-columns { flex-direction: column; align-items: flex-end; }
+  .col-2 { margin-left: 0; }
+  .about-grid { grid-template-columns: 1fr; row-gap: 1.5rem; }
+  .about-portrait { grid-row: auto; width: min(220px, 60%); justify-self: start; }
+  .teaching { padding: 1.5rem; }
   .speaking-grid { grid-template-columns: 1fr; }
+  .footer { left: var(--gutter); }
 }
