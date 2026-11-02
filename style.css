@@ -67,7 +67,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
 /* ===== Screens: one viewport each, with its own copy of the background ===== */
 .hero, .screen {
   position: relative;
-  background: var(--base) url('images/glass-sunset.jpg') center / cover no-repeat;
+  background: var(--base) url('images/glass-bricks.jpg') center / cover no-repeat;
   min-height: 100vh;
   min-height: 100svh;
   scroll-snap-align: start;
@@ -85,22 +85,23 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
 .hero {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-start;
-  text-align: right;
+  text-align: center;
   padding: 9vh var(--gutter) 6rem;
 }
 
-/* Cut-out headshot anchored to the bottom-right corner */
+/* Cut-out photo standing on the bottom edge of the slide, centered under the name */
 .hero-photo {
   position: absolute;
-  right: calc(var(--gutter) / 3);
+  left: 50%;
   bottom: 0;
+  transform: translateX(-50%);
   /* Scale within both limits so the photo keeps its proportions */
   width: auto;
   height: auto;
-  max-height: 52vh;
-  max-width: 50vw;
+  max-height: 56vh;
+  max-width: 80vw;
   z-index: 1;
 }
 
@@ -115,19 +116,17 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
   white-space: nowrap;
 }
 .hero-name { margin-bottom: 0.2rem; }
-.hero-name span { display: block; }
 
 .hero-roles {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .scroll-hint {
   position: absolute;
   bottom: 2rem;
-  left: 50%;
-  margin-left: -0.6rem;
+  right: var(--gutter);
   z-index: 2;
   font-size: 1.2rem;
   animation: bob 2s ease-in-out infinite;
@@ -294,8 +293,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
 
 /* ===== Responsive ===== */
 @media (max-width: 850px) {
-  .hero-photo { max-height: 42vh; max-width: 80vw; }
-  .scroll-hint { left: var(--gutter); margin-left: 0; }
+  .hero-photo { max-height: 50vh; max-width: 90vw; }
   /* Slides can be taller than the screen on phones, so snap gently */
   html { scroll-snap-type: y proximity; }
   .screen { padding: 4rem var(--gutter) 5rem; }
