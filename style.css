@@ -43,7 +43,7 @@ html { scroll-padding-top: 70px; scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  background: #b8e0e0 url('images/glass.png') center center / cover fixed;
+  background: #000 url('images/glass-blocks.jpg') top left / 600px auto repeat;
   color: var(--text);
   line-height: 1.7;
   font-size: 16px;
@@ -123,12 +123,13 @@ ul { list-style: none; }
 }
 
 .hero-inner { position: relative; z-index: 2; width: 100%; }
+.hero-eyebrow, .hero-role, .hero-sep { text-shadow: 0 2px 18px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 0.7); }
 
 .hero-eyebrow {
   font-family: var(--font-script);
   font-size: clamp(2rem, 4.8vw, 3.75rem);
   font-weight: 500;
-  color: var(--black);
+  color: var(--white);
   letter-spacing: -0.03em;
   margin-bottom: 1rem;
   white-space: nowrap;
@@ -146,8 +147,8 @@ ul { list-style: none; }
 .hero-role {
   font-family: var(--font-script);
   font-size: clamp(0.95rem, 1.7vw, 1.3rem);
-  font-weight: 300;
-  color: var(--text);
+  font-weight: 500;
+  color: var(--white);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -166,7 +167,8 @@ ul { list-style: none; }
   bottom: 2rem;
   z-index: 2;
   font-size: 1.2rem;
-  color: var(--purple);
+  color: var(--white);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
   animation: bob 2s ease-in-out infinite;
 }
 
@@ -619,7 +621,7 @@ ul { list-style: none; }
   }
   .nav-links.open { right: 0; }
   body {
-    background: #b8e0e0 url('images/glass.png') top left / 480px auto repeat scroll;
+    background: #000 url('images/glass-blocks.jpg') top left / 360px auto repeat;
   }
   .section { padding: 3rem 1.25rem; }
   .about-grid { grid-template-columns: 1fr; }
