@@ -95,16 +95,18 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
   align-items: flex-end;
   justify-content: flex-start;
   text-align: right;
-  padding: 14vh var(--gutter) 6rem;
+  padding: 9vh var(--gutter) 6rem;
 }
 
 /* Cut-out headshot anchored to the bottom-right corner */
 .hero-photo {
   position: absolute;
-  right: var(--gutter);
+  right: calc(var(--gutter) / 3);
   bottom: 0;
-  height: 52vh;
+  /* Scale within both limits so the photo keeps its proportions */
   width: auto;
+  height: auto;
+  max-height: 52vh;
   max-width: 50vw;
   z-index: 1;
 }
@@ -179,7 +181,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
   grid-template-columns: 7rem 1fr;
   gap: 1.5rem;
   padding: 0.6rem 0;
-  border-top: 1px solid var(--rule);
   font-size: var(--size-m);
 }
 .detail-label { color: var(--white-dim); }
@@ -310,7 +311,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
 
 /* ===== Responsive ===== */
 @media (max-width: 850px) {
-  .hero-photo { height: 42vh; max-width: 80vw; }
+  .hero-photo { max-height: 42vh; max-width: 80vw; }
   .scroll-hint { left: var(--gutter); margin-left: 0; }
   /* Slides can be taller than the screen on phones, so snap gently */
   html { scroll-snap-type: y proximity; }
