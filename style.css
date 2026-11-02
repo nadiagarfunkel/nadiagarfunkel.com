@@ -1,30 +1,28 @@
 /* ===== Reset ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* GT Zirkon (Grilli Type) — self-hosted; drop licensed webfont files into fonts/ */
+/* Absans — self-hosted, Regular only: hero and headings */
 @font-face {
-  font-family: 'GT Zirkon';
-  src: url('fonts/GT-Zirkon-Light.woff2') format('woff2'),
-       url('fonts/GT-Zirkon-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GT Zirkon';
-  src: url('fonts/GT-Zirkon-Regular.woff2') format('woff2'),
-       url('fonts/GT-Zirkon-Regular.woff') format('woff');
+  font-family: 'Absans';
+  src: url('fonts/Absans-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
+/* Manrope — self-hosted: body text (Medium) and "Let's connect." (Bold) */
 @font-face {
-  font-family: 'GT Zirkon';
-  src: url('fonts/GT-Zirkon-Medium.woff2') format('woff2'),
-       url('fonts/GT-Zirkon-Medium.woff') format('woff');
+  font-family: 'Manrope';
+  src: url('fonts/Manrope-Medium.woff2') format('woff2');
   font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/Manrope-Bold.woff2') format('woff2');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -36,7 +34,8 @@
   --rule: rgba(255, 255, 255, 0.28);
   --base: #0b1110;
 
-  --font-head: 'GT Zirkon', 'Helvetica Neue', Arial, sans-serif;
+  --font-head: 'Absans', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
 
   /* Type scale: xl matches the hero */
   --size-xl: clamp(1.4rem, 3vw, 2.6rem);
@@ -45,6 +44,8 @@
   --size-s: 0.8rem;
 
   --gutter: clamp(1.25rem, 5vw, 5rem);
+  --box: rgba(0, 0, 0, 0.65);
+  --box-pad: 2rem 2.25rem;
   --shadow: 0 1px 14px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -52,8 +53,8 @@
 html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
 
 body {
-  font-family: var(--font-head);
-  font-weight: 300;
+  font-family: var(--font-body);
+  font-weight: 500;
   background: var(--base);
   color: var(--white);
   line-height: 1.5;
@@ -66,7 +67,7 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { color: var(--white-mid); }
 ul { list-style: none; }
-h1, h2, h3, h4 { font-weight: 300; }
+h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
 
 ::selection { background: var(--white); color: var(--base); }
 
@@ -92,9 +93,22 @@ h1, h2, h3, h4 { font-weight: 300; }
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: right;
-  padding: 6rem var(--gutter);
+  padding: 9vh var(--gutter) 6rem;
+}
+
+/* Cut-out headshot anchored to the bottom-right corner */
+.hero-photo {
+  position: absolute;
+  right: calc(var(--gutter) / 3);
+  bottom: 0;
+  /* Scale within both limits so the photo keeps its proportions */
+  width: auto;
+  height: auto;
+  max-height: 52vh;
+  max-width: 50vw;
+  z-index: 1;
 }
 
 .hero-inner { position: relative; z-index: 2; width: 100%; }
@@ -102,7 +116,7 @@ h1, h2, h3, h4 { font-weight: 300; }
 /* Name and roles share one style: same size, weight and case */
 .hero-name, .hero-role {
   font-size: var(--size-xl);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.25;
   text-transform: lowercase;
   white-space: nowrap;
@@ -119,7 +133,8 @@ h1, h2, h3, h4 { font-weight: 300; }
 .scroll-hint {
   position: absolute;
   bottom: 2rem;
-  right: var(--gutter);
+  left: 50%;
+  margin-left: -0.6rem;
   z-index: 2;
   font-size: 1.2rem;
   animation: bob 2s ease-in-out infinite;
@@ -136,13 +151,12 @@ h1, h2, h3, h4 { font-weight: 300; }
   text-align: left;
 }
 
-/* After the hero, body text is bold for legibility on the photo; headings stay light */
-.screen { font-weight: 500; }
-.screen h2, .screen h3 { font-weight: 300; }
-.contact h2 { font-weight: 500; }
+/* Hero and headings in Absans; body text in Manrope Medium; "Let's connect." in Manrope Bold */
+.hero { font-family: var(--font-head); font-weight: 400; }
+.contact h2 { font-family: var(--font-body); font-weight: 700; }
 
-/* Text column that starts at the middle of the page */
-.col-2 { margin-left: 50%; }
+.box { background: var(--box); padding: var(--box-pad); }
+
 
 .subsection-title {
   font-size: var(--size-s);
@@ -151,22 +165,7 @@ h1, h2, h3, h4 { font-weight: 300; }
 }
 
 /* ===== About ===== */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  column-gap: 0;
-}
-
-.about-portrait {
-  grid-row: 1 / 3;
-  align-self: center;
-  justify-self: center;
-  width: min(260px, 70%);
-  /* Center on the left half of the page rather than the padded column */
-  transform: translateX(calc(var(--gutter) / -2));
-}
-.about-text, .about-details { max-width: 36rem; }
+.about { width: min(100%, 44rem); margin: 0 auto; }
 
 .about-text p {
   font-size: clamp(1rem, 1.25vw, 1.15rem);
@@ -182,30 +181,10 @@ h1, h2, h3, h4 { font-weight: 300; }
   grid-template-columns: 7rem 1fr;
   gap: 1.5rem;
   padding: 0.6rem 0;
-  border-top: 1px solid var(--rule);
   font-size: var(--size-m);
 }
 .detail-label { color: var(--white-dim); }
 .detail-value em { font-style: normal; }
-
-/* ===== Work ===== */
-.services-columns {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-
-.service-col h3 {
-  font-size: var(--size-xl);
-  line-height: 1.25;
-  margin-bottom: 1rem;
-}
-
-.service-col li {
-  font-size: var(--size-l);
-  line-height: 1.6;
-  color: var(--white-mid);
-}
 
 /* ===== Speaking ===== */
 .teaching {
@@ -215,7 +194,7 @@ h1, h2, h3, h4 { font-weight: 300; }
 
 /* Each speaking example and the student feedback get their own translucent box */
 .speaking-card, .feedback {
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--box);
   padding: 1rem;
 }
 .feedback { margin-top: 1.25rem; padding: 1.25rem 1.5rem; }
@@ -256,6 +235,8 @@ h1, h2, h3, h4 { font-weight: 300; }
 
 /* ===== Contact ===== */
 .contact-grid {
+  width: min(100%, 36rem);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -282,7 +263,7 @@ h1, h2, h3, h4 { font-weight: 300; }
   flex-direction: column;
   align-items: stretch;
   gap: 0.5rem;
-  width: min(100%, 30rem);
+  width: 100%;
 }
 .contact-form input,
 .contact-form textarea {
@@ -321,6 +302,8 @@ h1, h2, h3, h4 { font-weight: 300; }
   position: absolute;
   bottom: 1.5rem;
   left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
   font-size: var(--size-s);
   color: var(--white-dim);
 }
@@ -328,12 +311,11 @@ h1, h2, h3, h4 { font-weight: 300; }
 
 /* ===== Responsive ===== */
 @media (max-width: 850px) {
+  .hero-photo { max-height: 42vh; max-width: 80vw; }
+  .scroll-hint { left: var(--gutter); margin-left: 0; }
   /* Slides can be taller than the screen on phones, so snap gently */
   html { scroll-snap-type: y proximity; }
   .screen { padding: 4rem var(--gutter) 5rem; }
-  .col-2 { margin-left: 0; }
-  .about-grid { grid-template-columns: 1fr; row-gap: 1.5rem; }
-  .about-portrait { grid-row: auto; width: min(220px, 60%); justify-self: start; }
+  .box { padding: 1.5rem; }
   .speaking-grid { grid-template-columns: 1fr; }
-  .footer { left: var(--gutter); }
 }
