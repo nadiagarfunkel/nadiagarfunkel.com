@@ -37,7 +37,6 @@
 
   --font-head: 'Blinker', sans-serif;
   --font-body: 'Manrope', sans-serif;
-  --font-mono: 'Chivo Mono', monospace;
   --font-script: 'Ranade', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -76,7 +75,7 @@ ul { list-style: none; }
 }
 
 .nav-logo {
-  font-family: var(--font-mono);
+  font-family: var(--font-script);
   font-size: 0.85rem;
   color: var(--purple);
   letter-spacing: 0.15em;
@@ -86,7 +85,7 @@ ul { list-style: none; }
 
 .nav-links { display: flex; gap: 2.5rem; }
 .nav-links a {
-  font-family: var(--font-mono);
+  font-family: var(--font-script);
   font-size: 0.72rem;
   color: var(--text-mid);
   letter-spacing: 0.12em;
@@ -189,7 +188,7 @@ ul { list-style: none; }
 }
 
 .section-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-script);
   font-size: 0.7rem;
   color: var(--purple);
   letter-spacing: 0.2em;
@@ -248,7 +247,7 @@ ul { list-style: none; }
 .text-link {
   display: inline-block;
   margin-top: 1rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-script);
   font-size: 0.78rem;
   letter-spacing: 0.04em;
   color: var(--purple);
@@ -268,7 +267,7 @@ ul { list-style: none; }
 }
 
 .detail-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-script);
   font-size: 0.68rem;
   color: var(--purple);
   text-transform: uppercase;
@@ -351,7 +350,7 @@ ul { list-style: none; }
 }
 .stat-src {
   display: block;
-  font-family: var(--font-mono);
+  font-family: var(--font-script);
   font-size: 0.68rem;
   color: var(--text-light);
   letter-spacing: 0.08em;
@@ -392,7 +391,7 @@ ul { list-style: none; }
   background: var(--purple-pale);
 }
 .callout-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-script);
   font-size: 0.68rem;
   color: var(--purple);
   text-transform: uppercase;
@@ -412,7 +411,7 @@ ul { list-style: none; }
 .small-note { font-size: 0.82rem; color: var(--text-light); font-style: normal; }
 
 .ratings-note {
-  font-family: var(--font-mono);
+  font-family: var(--font-script);
   font-size: 0.82rem;
   color: var(--purple);
   letter-spacing: 0.04em;
@@ -422,7 +421,7 @@ ul { list-style: none; }
 }
 
 .subsection-title {
-  font-family: var(--font-mono);
+  font-family: var(--font-script);
   font-size: 0.7rem;
   font-weight: 400;
   color: var(--purple);
@@ -496,7 +495,7 @@ ul { list-style: none; }
   gap: 0.35rem;
 }
 .speaking-venue {
-  font-family: var(--font-mono);
+  font-family: var(--font-script);
   font-size: 0.65rem;
   color: var(--purple);
   letter-spacing: 0.12em;
@@ -516,7 +515,7 @@ ul { list-style: none; }
   font-style: italic;
 }
 .speaking-link {
-  font-family: var(--font-mono);
+  font-family: var(--font-script);
   font-size: 0.68rem;
   color: var(--purple-light);
   letter-spacing: 0.08em;
@@ -550,7 +549,7 @@ ul { list-style: none; }
   padding: 0.7rem 1.1rem;
   background: var(--purple-pale);
   border: 1px solid rgba(26, 92, 58, 0.2);
-  font-family: var(--font-mono);
+  font-family: var(--font-script);
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -582,7 +581,7 @@ ul { list-style: none; }
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: var(--text-light);
-  font-family: var(--font-mono);
+  font-family: var(--font-script);
   font-size: 0.72rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -596,7 +595,7 @@ ul { list-style: none; }
   background: var(--purple);
   color: var(--white);
   border: none;
-  font-family: var(--font-mono);
+  font-family: var(--font-script);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -610,7 +609,7 @@ ul { list-style: none; }
 .footer {
   text-align: center;
   padding: 2rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-script);
   font-size: 0.7rem;
   color: var(--text-light);
   letter-spacing: 0.1em;
