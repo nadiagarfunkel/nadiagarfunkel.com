@@ -21,19 +21,19 @@
 }
 
 :root {
-  --black: #0d1a12;
-  --dark: #1a2e20;
-  --text: #111a14;
-  --text-mid: #3a5242;
-  --text-light: #6a806e;
+  --black: #121110;
+  --dark: #1f1c1a;
+  --text: #1a1817;
+  --text-mid: #4a4542;
+  --text-light: #7a736e;
   --white: #ffffff;
-  --off-white: #f5f8f5;
-  --purple: #1a5c3a;
-  --purple-light: #2d8a57;
-  --purple-pale: #e6f2ea;
+  --off-white: #f7f5f3;
+  --purple: #3d3734;
+  --purple-light: #6b625c;
+  --purple-pale: #efebe7;
   --panel: rgba(255, 255, 255, 0.78);
   --panel-dark: rgba(255, 255, 255, 0.62);
-  --border: rgba(15, 30, 18, 0.1);
+  --border: rgba(30, 25, 20, 0.1);
 
   --font-body: 'Manrope', sans-serif;
   --font-script: 'Ranade', 'Helvetica Neue', Arial, sans-serif;
@@ -280,8 +280,8 @@ ul { list-style: none; }
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .service-col:hover {
-  border-color: rgba(0, 230, 118, 0.6);
-  box-shadow: 0 4px 24px rgba(0, 230, 118, 0.2);
+  border-color: rgba(61, 55, 52, 0.35);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
 }
 
 .service-col h3 {
@@ -319,7 +319,7 @@ ul { list-style: none; }
   margin-bottom: 1.5rem;
   padding: 1.25rem 2rem;
   background: var(--purple-pale);
-  border: 1px solid rgba(26, 92, 58, 0.15);
+  border: 1px solid rgba(61, 55, 52, 0.15);
 }
 
 .stat-num {
@@ -343,7 +343,7 @@ ul { list-style: none; }
   text-transform: uppercase;
   margin-top: 0.25rem;
 }
-.stat-divider { width: 1px; height: 50px; background: rgba(26, 92, 58, 0.15); }
+.stat-divider { width: 1px; height: 50px; background: rgba(61, 55, 52, 0.15); }
 
 .quotes-list {
   margin-bottom: 2.5rem;
@@ -441,8 +441,8 @@ ul { list-style: none; }
   transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 .speaking-card:hover {
-  border-color: rgba(0, 230, 118, 0.6);
-  box-shadow: 0 6px 24px rgba(0, 230, 118, 0.18);
+  border-color: rgba(61, 55, 52, 0.35);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
   transform: translateY(-2px);
 }
 
@@ -450,7 +450,7 @@ ul { list-style: none; }
   aspect-ratio: 1 / 1;
   overflow: hidden;
   background:
-    linear-gradient(135deg, rgba(26, 92, 58, 0.12), rgba(45, 138, 87, 0.22)),
+    linear-gradient(135deg, rgba(61, 55, 52, 0.12), rgba(107, 98, 92, 0.22)),
     var(--purple-pale);
   position: relative;
 }
@@ -534,7 +534,7 @@ ul { list-style: none; }
   margin-top: 1.5rem;
   padding: 0.7rem 1.1rem;
   background: var(--purple-pale);
-  border: 1px solid rgba(26, 92, 58, 0.2);
+  border: 1px solid rgba(61, 55, 52, 0.2);
   font-family: var(--font-script);
   font-size: 0.78rem;
   font-weight: 600;
