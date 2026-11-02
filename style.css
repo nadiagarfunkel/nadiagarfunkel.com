@@ -39,11 +39,11 @@
   --font-script: 'Ranade', 'Helvetica Neue', Arial, sans-serif;
 }
 
-html { scroll-padding-top: 70px; scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  background: #000 url('images/glass-sunset.jpg') top center / 100% auto repeat-y;
+  background: #0b1110;
   color: var(--text);
   line-height: 1.7;
   font-size: 16px;
@@ -109,10 +109,22 @@ ul { list-style: none; }
 .nav-toggle.open span:first-child { transform: rotate(45deg) translate(3px, 4px); }
 .nav-toggle.open span:last-child { transform: rotate(-45deg) translate(3px, -4px); }
 
+/* ===== Screens: each block fills one viewport with its own copy of the background ===== */
+.hero, .screen {
+  background: #0b1110 url('images/glass-sunset.jpg') center / cover no-repeat;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.screen {
+  display: flex;
+  align-items: center;
+  padding: 5.5rem 2rem 2.5rem;
+}
+
 /* ===== Hero ===== */
 .hero {
   position: relative;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -180,8 +192,9 @@ ul { list-style: none; }
 /* ===== Sections ===== */
 .section {
   padding: 5rem 3rem;
+  width: 100%;
   max-width: 1100px;
-  margin: 2.5rem auto;
+  margin: 0 auto;
   background: var(--panel);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -620,9 +633,7 @@ ul { list-style: none; }
     border-left: 1px solid var(--border);
   }
   .nav-links.open { right: 0; }
-  body {
-    background: #000 url('images/glass-sunset.jpg') top center / 100% auto repeat-y;
-  }
+  .screen { padding: 5rem 1rem 1.5rem; }
   .section { padding: 3rem 1.25rem; }
   .about-grid { grid-template-columns: 1fr; }
   .about-portrait { grid-row: auto; max-height: 380px; overflow: hidden; }
