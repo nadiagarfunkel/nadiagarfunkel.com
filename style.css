@@ -1,28 +1,11 @@
 /* ===== Reset ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* Absans — self-hosted, Regular only: hero and headings */
+/* Absans — self-hosted, Regular only; bold weights are synthesized by the browser */
 @font-face {
   font-family: 'Absans';
   src: url('fonts/Absans-Regular.woff') format('woff');
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Manrope — self-hosted: body text (Medium) and "Let's connect." (Bold) */
-@font-face {
-  font-family: 'Manrope';
-  src: url('fonts/Manrope-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Manrope';
-  src: url('fonts/Manrope-Bold.woff2') format('woff2');
-  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -35,7 +18,6 @@
   --base: #0b1110;
 
   --font-head: 'Absans', 'Helvetica Neue', Arial, sans-serif;
-  --font-body: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
 
   /* Type scale: xl matches the hero */
   --size-xl: clamp(1.4rem, 3vw, 2.6rem);
@@ -53,8 +35,8 @@
 html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
 
 body {
-  font-family: var(--font-body);
-  font-weight: 500;
+  font-family: var(--font-head);
+  font-weight: 400;
   background: var(--base);
   color: var(--white);
   line-height: 1.5;
@@ -162,15 +144,15 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
   text-align: left;
 }
 
-/* Hero and headings in Absans; body text in Manrope Medium; "Let's connect." in Manrope Bold */
-.hero { font-family: var(--font-head); font-weight: 400; }
-.contact h2 { font-family: var(--font-body); font-weight: 700; }
+/* Absans throughout; bold is used for emphasis on the speaking and contact slides */
+.contact h2 { font-weight: 700; }
 
 .box { background: var(--box); padding: var(--box-pad); }
 
 
 .subsection-title {
   font-size: var(--size-s);
+  font-weight: 700;
   color: var(--white-dim);
   margin-bottom: 0.5rem;
 }
@@ -184,18 +166,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
   /* Avoid single-word last lines */
   text-wrap: pretty;
 }
-
-.about-details { margin-top: 1rem; }
-
-.detail-row {
-  display: grid;
-  grid-template-columns: 7rem 1fr;
-  gap: 1.5rem;
-  padding: 0.6rem 0;
-  font-size: var(--size-m);
-}
-.detail-label { color: var(--white-dim); }
-.detail-value em { font-style: normal; }
 
 /* ===== Speaking ===== */
 .teaching {
@@ -229,8 +199,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
   padding-top: 0.75rem;
 }
 .speaking-venue { font-size: var(--size-s); color: var(--white-dim); }
-.speaking-title { font-size: var(--size-l); line-height: 1.3; }
-.speaking-desc { font-size: var(--size-s); color: var(--white-mid); }
+.speaking-title { font-size: var(--size-l); line-height: 1.3; font-weight: 700; }
 
 .quotes-list { max-width: 44rem; }
 .quotes-list blockquote {
@@ -243,6 +212,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
   color: var(--white-dim);
   margin-top: 1.25rem;
 }
+.ratings-note strong { color: var(--white); font-weight: 700; }
 
 /* ===== Contact ===== */
 .contact-grid {
@@ -266,6 +236,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
   gap: 0.5rem;
   margin-top: 0.75rem;
   font-size: var(--size-m);
+  font-weight: 700;
 }
 .linkedin-icon { display: inline-flex; }
 
@@ -303,6 +274,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
   border: 1px solid var(--white);
   font: inherit;
   font-size: var(--size-m);
+  font-weight: 700;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
