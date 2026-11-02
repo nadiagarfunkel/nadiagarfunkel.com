@@ -67,7 +67,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
 /* ===== Screens: one viewport each, with its own copy of the background ===== */
 .hero, .screen {
   position: relative;
-  background: var(--base) url('images/glass-bricks.jpg') center / cover no-repeat;
+  background: var(--base) url('images/glass-bricks.jpg?v=2') center / cover no-repeat;
   min-height: 100vh;
   min-height: 100svh;
   scroll-snap-align: start;
