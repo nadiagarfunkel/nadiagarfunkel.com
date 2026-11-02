@@ -1,11 +1,28 @@
 /* ===== Reset ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* Absans — self-hosted. Only Regular is included, so heavier weights are synthesized by the browser */
+/* Absans — self-hosted, Regular only: hero and headings */
 @font-face {
   font-family: 'Absans';
   src: url('fonts/Absans-Regular.woff') format('woff');
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Satoshi (Indian Type Foundry, Fontshare) — body text */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('fonts/Satoshi-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('fonts/Satoshi-Black.woff2') format('woff2');
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
@@ -18,6 +35,7 @@
   --base: #0b1110;
 
   --font-head: 'Absans', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Satoshi', 'Helvetica Neue', Arial, sans-serif;
 
   /* Type scale: xl matches the hero */
   --size-xl: clamp(1.4rem, 3vw, 2.6rem);
@@ -26,8 +44,6 @@
   --size-s: 0.8rem;
 
   --gutter: clamp(1.25rem, 5vw, 5rem);
-  /* Right-hand text boxes start a little past the middle of the page */
-  --shift: 2rem;
   --box: rgba(0, 0, 0, 0.65);
   --box-pad: 2rem 2.25rem;
   --shadow: 0 1px 14px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.5);
@@ -37,8 +53,8 @@
 html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
 
 body {
-  font-family: var(--font-head);
-  font-weight: 300;
+  font-family: var(--font-body);
+  font-weight: 700;
   background: var(--base);
   color: var(--white);
   line-height: 1.5;
@@ -51,7 +67,7 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { color: var(--white-mid); }
 ul { list-style: none; }
-h1, h2, h3, h4 { font-weight: 300; }
+h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
 
 ::selection { background: var(--white); color: var(--base); }
 
@@ -87,7 +103,7 @@ h1, h2, h3, h4 { font-weight: 300; }
 /* Name and roles share one style: same size, weight and case */
 .hero-name, .hero-role {
   font-size: var(--size-xl);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.25;
   text-transform: lowercase;
   white-space: nowrap;
@@ -121,14 +137,20 @@ h1, h2, h3, h4 { font-weight: 300; }
   text-align: left;
 }
 
-/* After the hero, body text is bold for legibility on the photo; headings stay light */
-.screen { font-weight: 600; }
-.screen h2, .screen h3 { font-weight: 300; }
-.contact h2 { font-weight: 600; }
+/* Hero and headings in Absans; body text in Satoshi Bold; "Let's connect." in Satoshi Black */
+.hero { font-family: var(--font-head); font-weight: 400; }
+.contact h2 { font-family: var(--font-body); font-weight: 900; }
 
-/* Text box that starts just past the middle of the page and runs to the right edge */
-.col-2 { margin-left: calc(50% + var(--shift)); }
 .box { background: var(--box); padding: var(--box-pad); }
+
+/* About and Work side by side on one page, boxes the same height */
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 2rem;
+  width: 100%;
+}
 
 .subsection-title {
   font-size: var(--size-s);
@@ -137,24 +159,6 @@ h1, h2, h3, h4 { font-weight: 300; }
 }
 
 /* ===== About ===== */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  column-gap: 0;
-}
-.about-copy { grid-column: 2; grid-row: 1; }
-
-.about-portrait {
-  grid-row: 1;
-  align-self: center;
-  justify-self: center;
-  width: min(260px, 70%);
-  /* Center on the left half of the page rather than the padded column */
-  transform: translateX(calc(var(--gutter) / -2));
-}
-.about-copy { margin-left: var(--shift); }
-
 .about-text p {
   font-size: clamp(1rem, 1.25vw, 1.15rem);
   margin-bottom: 0.85rem;
@@ -176,7 +180,7 @@ h1, h2, h3, h4 { font-weight: 300; }
 .detail-value em { font-style: normal; }
 
 /* ===== Work ===== */
-.services-columns {
+.services {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -243,6 +247,8 @@ h1, h2, h3, h4 { font-weight: 300; }
 
 /* ===== Contact ===== */
 .contact-grid {
+  width: min(100%, 36rem);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -269,7 +275,7 @@ h1, h2, h3, h4 { font-weight: 300; }
   flex-direction: column;
   align-items: stretch;
   gap: 0.5rem;
-  width: min(100%, 30rem);
+  width: 100%;
 }
 .contact-form input,
 .contact-form textarea {
@@ -307,7 +313,9 @@ h1, h2, h3, h4 { font-weight: 300; }
 .footer {
   position: absolute;
   bottom: 1.5rem;
-  left: calc(50% + var(--shift) + 2.25rem);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
   font-size: var(--size-s);
   color: var(--white-dim);
 }
@@ -318,11 +326,7 @@ h1, h2, h3, h4 { font-weight: 300; }
   /* Slides can be taller than the screen on phones, so snap gently */
   html { scroll-snap-type: y proximity; }
   .screen { padding: 4rem var(--gutter) 5rem; }
-  .col-2, .about-copy { margin-left: 0; }
-  .about-copy { grid-column: 1; grid-row: auto; }
   .box { padding: 1.5rem; }
-  .about-grid { grid-template-columns: 1fr; row-gap: 1.5rem; }
-  .about-portrait { grid-row: auto; width: min(220px, 60%); justify-self: start; }
+  .pair { grid-template-columns: 1fr; gap: 1.25rem; }
   .speaking-grid { grid-template-columns: 1fr; }
-  .footer { left: var(--gutter); }
 }
