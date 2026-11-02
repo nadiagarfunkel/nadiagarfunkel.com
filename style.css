@@ -106,12 +106,12 @@ ul { list-style: none; }
 
 .hero-name {
   font-family: var(--font-head);
-  font-size: clamp(4rem, 13vw, 11rem);
+  /* Same size as the roles below */
+  font-size: clamp(0.95rem, 1.7vw, 1.3rem);
   font-weight: 300;
   color: var(--white);
-  letter-spacing: -0.04em;
-  line-height: 0.88;
-  margin-bottom: 2rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 .hero-name span { display: block; }
 
@@ -586,5 +586,6 @@ ul { list-style: none; }
 }
 
 @media (max-width: 600px) {
+  .hero-name { font-size: 0.85rem; }
   .hero-role { font-size: 0.85rem; letter-spacing: 0.12em; margin-right: -0.12em; }
 }
