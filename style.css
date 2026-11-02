@@ -43,7 +43,7 @@ html { scroll-padding-top: 70px; scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  background: #000 url('images/glass-blocks.jpg') top left / 600px auto repeat;
+  background: #000 url('images/glass-sunset.jpg') top center / 100% auto repeat-y;
   color: var(--text);
   line-height: 1.7;
   font-size: 16px;
@@ -621,7 +621,7 @@ ul { list-style: none; }
   }
   .nav-links.open { right: 0; }
   body {
-    background: #000 url('images/glass-blocks.jpg') top left / 360px auto repeat;
+    background: #000 url('images/glass-sunset.jpg') top center / 100% auto repeat-y;
   }
   .section { padding: 3rem 1.25rem; }
   .about-grid { grid-template-columns: 1fr; }
