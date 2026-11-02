@@ -34,11 +34,11 @@
   --panel: rgba(255, 255, 255, 0.78);
   /* Liquid glass: diagonal white streak over a translucent frosted fill */
   --glass-fill:
-    linear-gradient(115deg, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.32) 40%, rgba(255, 255, 255, 0) 56%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.4));
-  --glass-blur: blur(22px) saturate(160%);
-  --glass-edge: 1px solid rgba(255, 255, 255, 0.55);
-  --glass-shine: inset 0 1px 0 rgba(255, 255, 255, 0.7), inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+    linear-gradient(115deg, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.16) 40%, rgba(255, 255, 255, 0) 56%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.62));
+  --glass-blur: blur(12px) saturate(130%);
+  --glass-edge: 1px solid rgba(255, 255, 255, 0.28);
+  --glass-shine: inset 0 1px 0 rgba(255, 255, 255, 0.35);
   --panel-dark: rgba(255, 255, 255, 0.62);
   --border: rgba(30, 25, 20, 0.1);
 
@@ -67,58 +67,6 @@ ul { list-style: none; }
 
 ::selection { background: var(--purple-light); color: var(--black); }
 
-/* ===== Navigation ===== */
-.nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2.5rem;
-  background: var(--glass-fill);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border-bottom: var(--glass-edge);
-  box-shadow: var(--glass-shine), 0 4px 24px rgba(0, 0, 0, 0.12);
-}
-
-.nav-logo {
-  font-family: var(--font-script);
-  font-size: 0.85rem;
-  color: var(--purple);
-  letter-spacing: 0.15em;
-  font-weight: 700;
-}
-.nav-logo:hover { color: var(--purple); }
-
-.nav-links { display: flex; gap: 2.5rem; }
-.nav-links a {
-  font-family: var(--font-script);
-  font-size: 0.72rem;
-  color: var(--text-mid);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.nav-links a:hover { color: var(--text); }
-
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-}
-.nav-toggle span {
-  display: block; width: 22px; height: 1.5px;
-  background: var(--text);
-  transition: all 0.3s;
-}
-.nav-toggle.open span:first-child { transform: rotate(45deg) translate(3px, 4px); }
-.nav-toggle.open span:last-child { transform: rotate(-45deg) translate(3px, -4px); }
-
 /* ===== Screens: each block fills one viewport with its own copy of the background ===== */
 .hero, .screen {
   background: #0b1110 url('images/glass-sunset.jpg') center / cover no-repeat;
@@ -129,7 +77,7 @@ ul { list-style: none; }
 .screen {
   display: flex;
   align-items: center;
-  padding: 5.5rem 2rem 2.5rem;
+  padding: 2.5rem 2rem;
 }
 
 /* ===== Hero ===== */
@@ -209,7 +157,6 @@ ul { list-style: none; }
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: var(--glass-edge);
-  border-radius: 20px;
   box-shadow: var(--glass-shine), 0 8px 40px rgba(0, 0, 0, 0.18);
 }
 
@@ -625,23 +572,7 @@ ul { list-style: none; }
 
 /* ===== Responsive ===== */
 @media (max-width: 850px) {
-  .nav { padding: 0.8rem 1.25rem; }
-  .nav-toggle { display: flex; }
-  .nav-links {
-    position: fixed;
-    top: 0; right: -100%;
-    width: 240px; height: 100vh;
-    background: var(--glass-fill), rgba(255, 255, 255, 0.35);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    flex-direction: column;
-    padding: 4.5rem 1.5rem;
-    gap: 1.25rem;
-    transition: right 0.3s;
-    border-left: 1px solid var(--border);
-  }
-  .nav-links.open { right: 0; }
-  .screen { padding: 5rem 1rem 1.5rem; }
+  .screen { padding: 1.5rem 1rem; }
   .section { padding: 3rem 1.25rem; }
   .about-grid { grid-template-columns: 1fr; }
   .about-portrait { grid-row: auto; max-height: 380px; overflow: hidden; }
