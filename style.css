@@ -186,21 +186,6 @@ ul { list-style: none; }
   box-shadow: 0 4px 32px rgba(15, 15, 30, 0.07);
 }
 
-.section-label {
-  font-family: var(--font-script);
-  font-size: 0.7rem;
-  color: var(--purple);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: 3rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--border);
-}
-.section-label span {
-  color: var(--purple);
-  margin-right: 0.5rem;
-}
-
 /* ===== About ===== */
 .about-grid {
   display: grid;
